@@ -48,7 +48,11 @@ if username in registered_users and registered_users[username] == password:
     elif int(text_number) < 1 or int(text_number) > len(TEXTS):
         print("There are only", len(TEXTS), "texts, terminating the program")
     else:
-        print("OK, analyzing text", text_number)
+        index = int(text_number) - 1
+        selected_text = TEXTS[index]
+        words = selected_text.split()    
+        print("-" * 40)
+        print("There are", int(len(words)), "words in the selected text.")
 else:
     print("unregistered user, terminating the program..")
 
