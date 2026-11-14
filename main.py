@@ -43,6 +43,12 @@ if username in registered_users and registered_users[username] == password:
     print("We have", len(TEXTS), "texts to be analyzed.")
     print("-" * 40)
     text_number = input("Enter a number btw. 1 and " + str(len(TEXTS)) + " to select: ")
-
+    if not text_number.isdigit():
+        print("Input is not a number, terminating the program")
+    elif int(text_number) < 1 or int(text_number) > len(TEXTS):
+        print("There are only", len(TEXTS), "texts, terminating the program")
+    else:
+        print("OK, analyzing text", text_number)
 else:
     print("unregistered user, terminating the program..")
+
