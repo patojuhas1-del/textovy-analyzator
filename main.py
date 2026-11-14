@@ -38,6 +38,11 @@ registered_users = {
 username = input("username:")
 password = input("password:")
 if username in registered_users and registered_users[username] == password:
+    print("-" * 40)
     print("Welcome to the app,", username)
+    print("We have", len(TEXTS), "texts to be analyzed.")
+    print("-" * 40)
+    text_number = input("Enter a number btw. 1 and " + str(len(TEXTS)) + " to select: ")
+
 else:
     print("unregistered user, terminating the program..")
