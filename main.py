@@ -1,5 +1,5 @@
 """
-main.py: Projekt 1 – Textový analyzátor (Engeto Python Akademie)
+main.py: Projekt 1 - Textový analyzátor (Engeto Python Akademie)
 author: Patrik Juhás
 """
 
@@ -35,7 +35,7 @@ registered_users = {
     "bob": "123",
     "ann": "pass123",
     "mike": "password123",
-    "liz": "pass123" 
+    "liz": "pass123"
 }
 
 username = input("username:")
@@ -55,7 +55,7 @@ if username in registered_users and registered_users[username] == password:
     else:
         index = int(text_number) - 1
         selected_text = TEXTS[index]
-        words = selected_text.split()    
+        words = selected_text.split()
         print("-" * 40)
         print("There are", len(words), "words in the selected text.")
         title_words = 0
@@ -91,10 +91,10 @@ if username in registered_users and registered_users[username] == password:
         print("-" * 40)
         for length in sorted(lengths):
             print(
-                str(length).rjust(3) + "|" 
-                + ("*" * lengths[length]).ljust(width) 
+                str(length).rjust(3) + "|"
+                + ("*" * lengths[length]).ljust(width)
                 + "|" + str(lengths[length])
-                )     
+                )
 else:
     print("unregistered user, terminating the program..")
 
