@@ -52,7 +52,20 @@ if username in registered_users and registered_users[username] == password:
         selected_text = TEXTS[index]
         words = selected_text.split()    
         print("-" * 40)
-        print("There are", int(len(words)), "words in the selected text.")
+        print("There are", len(words), "words in the selected text.")
+        title_words = 0
+        upper_words = 0
+        lower_words = 0
+        for word in words:
+            if word.istitle():
+                title_words = title_words + 1
+            if word.isupper():
+                upper_words = upper_words + 1
+            if word.islower():
+                lower_words = lower_words + 1
+        print("There are", title_words, "titlecase words.")
+        print("There are", upper_words, "uppercase words.")
+        print("There are", lower_words, "lowercase words.")
 else:
     print("unregistered user, terminating the program..")
 
