@@ -56,8 +56,9 @@ if username in registered_users and registered_users[username] == password:
         title_words = 0
         upper_words = 0
         lower_words = 0
-        digits = 0
+        numbers = 0
         total = 0
+        lengths = {}
         for word in words:
             if word.istitle():
                 title_words = title_words + 1
@@ -66,12 +67,19 @@ if username in registered_users and registered_users[username] == password:
             if word.islower():
                 lower_words = lower_words + 1
             if word.isdigit():
-                digits = digits + 1
+                numbers = numbers + 1
                 total = total + int(word)
+            clean_word = word.strip(",.")
+            length = len(clean_word)
+            if length in lengths:
+                lengths[length] = lengths[length] + 1
+            else:
+                lengths[length] = 1
+        print(lengths)
         print("There are", title_words, "titlecase words.")
         print("There are", upper_words, "uppercase words.")
         print("There are", lower_words, "lowercase words.")
-        print("There are", digits, "numeric strings.")
+        print("There are", numbers, "numeric strings.")
         print("The sum of all the numbers", total)
 else:
     print("unregistered user, terminating the program..")
