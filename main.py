@@ -1,4 +1,7 @@
-# Projekt 1: Textový analyzátor
+"""
+main.py: Projekt 1 – Textový analyzátor (Engeto Python Akademie)
+author: Patrik Juhás
+"""
 
 TEXTS = [
     '''Situated about 10 miles west of Kemmerer,
@@ -42,7 +45,9 @@ if username in registered_users and registered_users[username] == password:
     print("Welcome to the app,", username)
     print("We have", len(TEXTS), "texts to be analyzed.")
     print("-" * 40)
-    text_number = input("Enter a number btw. 1 and " + str(len(TEXTS)) + " to select: ")
+    text_number = input(
+        "Enter a number btw. 1 and " + str(len(TEXTS)) + " to select: "
+        )
     if not text_number.isdigit():
         print("Input is not a number, terminating the program")
     elif int(text_number) < 1 or int(text_number) > len(TEXTS):
@@ -85,7 +90,11 @@ if username in registered_users and registered_users[username] == password:
         print("LEN|" + "OCCURRENCES".center(width) + "|NR.")
         print("-" * 40)
         for length in sorted(lengths):
-            print(str(length).rjust(3) + "|" + ("*" * lengths[length]).ljust(width) + "|" + str(lengths[length]))     
+            print(
+                str(length).rjust(3) + "|" 
+                + ("*" * lengths[length]).ljust(width) 
+                + "|" + str(lengths[length])
+                )     
 else:
     print("unregistered user, terminating the program..")
 
