@@ -75,12 +75,17 @@ if username in registered_users and registered_users[username] == password:
                 lengths[length] = lengths[length] + 1
             else:
                 lengths[length] = 1
-        print(lengths)
         print("There are", title_words, "titlecase words.")
         print("There are", upper_words, "uppercase words.")
         print("There are", lower_words, "lowercase words.")
         print("There are", numbers, "numeric strings.")
         print("The sum of all the numbers", total)
+        print("-" * 40)
+        width = max(lengths.values()) + 4
+        print("LEN|" + "OCCURRENCES".center(width) + "|NR.")
+        print("-" * 40)
+        for length in sorted(lengths):
+            print(str(length).rjust(3) + "|" + ("*" * lengths[length]).ljust(width) + "|" + str(lengths[length]))     
 else:
     print("unregistered user, terminating the program..")
 
